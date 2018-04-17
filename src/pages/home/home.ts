@@ -7,8 +7,15 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  title : string = '';
+  isShown : boolean = true;
+  names : string[] = ['张三', '李四', '王二麻子'];
 
+  constructor(public navCtrl : NavController) {}
+
+  onChangeTitle(){
+    console.log('HomePage');
+    this.title="Home";
   }
 
 }

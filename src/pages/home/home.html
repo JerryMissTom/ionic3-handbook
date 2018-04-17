@@ -1,14 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      首页
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <p>{{2+3}}</p>
+  <h3>{{title}}</h3>
+  <label> 输入框 <input style="border:1px solid #000000" type="text" [(ngModel)]="title"> </label>
+
+  <p *ngIf="isShown">看得到我</p>
+
+  <p *ngIf="!isShown">看不到我</p>
+
+  <p *ngIf="names.length>0">下面是数组，长度为{{names.length}}</p>
+  <ul>
+    <li *ngFor="let item of names; index as i">
+      {{ i+item }}
+    </li>
+  </ul>
+
+  <button (click)="onChangeTitle()">点击</button>
 </ion-content>
