@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { NormalLoadPage } from '../normal-load/normal-load';
 
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
+@Component({selector: 'page-home', templateUrl: 'home.html'})
 export class HomePage {
 
   title : string = '';
@@ -13,9 +11,22 @@ export class HomePage {
 
   constructor(public navCtrl : NavController) {}
 
-  onChangeTitle(){
+  onChangeTitle() {
     console.log('HomePage');
-    this.title="Home";
+    this.title = "Home";
   }
 
+  toLazyLoadPage() {
+    this.navCtrl.push('LazyLoadPage', {
+        name: 'ionic',
+        age: 18
+      });
+  }
+
+  toNormalLoadPage(){
+    this.navCtrl.push(NormalLoadPage, {
+      name: 'handbook',
+      age: 20
+    });
+  }
 }
