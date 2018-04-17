@@ -8,20 +8,20 @@
 
 <ion-content>
 
-  <p>{{2+3}}</p>
+  <p class="alert" [style.background]="isShown?'black':'blue'">{{2+3}}</p>
   <h3>{{title}}</h3>
   <label> 输入框 <input style="border:1px solid #000000" type="text" [(ngModel)]="title"> </label>
 
-  <p *ngIf="isShown">看得到我</p>
-
+  <p [class.alert]="isShown" *ngIf="isShown">看得到我</p>
   <p *ngIf="!isShown">看不到我</p>
 
-  <p *ngIf="names.length>0">下面是数组，长度为{{names.length}}</p>
+  <p *ngIf="names.length>0" [style.font-size.em]="isShown ? 2 : 1">下面是数组，长度为{{names.length}}</p>
   <ul>
     <li *ngFor="let item of names; index as i">
       {{ i+item }}
     </li>
   </ul>
 
-  <button (click)="onChangeTitle()">点击</button>
+  <button class="btn-primary" (click)="onChangeTitle()">点击</button>
+
 </ion-content>
