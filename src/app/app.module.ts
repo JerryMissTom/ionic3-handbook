@@ -16,7 +16,11 @@ import { NormalLoadPage } from '../pages/normal-load/normal-load';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonIcon:'ios-arrow-back',
+      backButtonText: '',
+      mode: 'ios'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
