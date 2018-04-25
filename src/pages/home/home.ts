@@ -32,6 +32,10 @@ export class HomePage {
     });
   }
 
+  toNetPage(){
+    this.navCtrl.push('NetPage');
+  }
+
   ionViewDidLoad() {
     console.log('HomePage ionViewDidLoad');
     this.events.subscribe('changeTitle',(title)=>{
